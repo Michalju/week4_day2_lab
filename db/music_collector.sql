@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS albums;
 DROP TABLE IF EXISTS artists;
-
 CREATE TABLE artists (
 id SERIAL PRIMARY KEY, -- Primary Key
 name VARCHAR(255)
