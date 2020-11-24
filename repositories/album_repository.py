@@ -36,3 +36,26 @@ def select_all():
         album = Album(row['title'],row['genre'], artist, row['id'] )
         albums.append(album)
     return albums
+
+def list_albums_by_artist_id(id):
+    sql = "SELECT * FROM albums WHERE artist_id = (%s)"  
+    values = [id] 
+    results = run_sql(sql, values)
+    if results :
+        print (f"Album made by {artist_repository.select(id).name} :")
+        print ("--------------------------------------")
+        for row in results:
+            print (f"Album title = {row['title']}")
+            print (f"Genre = {row['genre']}") 
+            print ("--------------------------------------")
+    else:
+        print(f"!!!!!!!! Artist id {id} not found !!!!!!!!")
+
+def list_albums_by_artist_name(name):
+    sql = "SELECT id FROM artists WHERE name = (%s)"  
+    values = [name] 
+    results = run_sql(sql, values)
+    if results:
+        list_albums_by_artist_id(results[0]['id'])
+    else:
+        print(f"!!!!!!!! Artist {name} not found !!!!!!!!")
