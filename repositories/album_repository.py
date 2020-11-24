@@ -67,3 +67,8 @@ def edit_title(old_title, new_title):
     result = run_sql(sql, values)
     if not result:
         Print(f"!!!!!!!! Can't find title {old_title}") 
+
+def delete_by_id(id):
+    sql = "DELETE  FROM albums WHERE id = %s" 
+    values = [id]
+    run_sql(sql, values)

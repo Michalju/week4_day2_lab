@@ -64,11 +64,15 @@ import repositories.album_repository as album_repository
 # album_repository.edit_title(new_title, old_title)
 # album_repository.list_albums_by_artist_name("AC/DC")
 
-old_artist_name = "Metallica"
-new_artist_name = "Megadeath"
-print(f"Artist name BEFORE change: {artist_repository.select(20).name}")
-artist_repository.edit_name(old_artist_name, new_artist_name)
-print(f"Artist name AFTER change: {artist_repository.select(20).name}")
-artist_repository.edit_name(new_artist_name, old_artist_name)
-print(f"Artist name back to how it was: {artist_repository.select(20).name}")
+# old_artist_name = "Metallica"
+# new_artist_name = "Megadeath"
+# print(f"Artist name BEFORE change: {artist_repository.select(20).name}")
+# artist_repository.edit_name(old_artist_name, new_artist_name)
+# print(f"Artist name AFTER change: {artist_repository.select(20).name}")
+# artist_repository.edit_name(new_artist_name, old_artist_name)
+# print(f"Artist name back to how it was: {artist_repository.select(20).name}")
+
+# Extension task 3
+# artist_repository.delete_by_id(20)
+# album_repository.delete_by_id(60)
 #pdb.set_trace()
