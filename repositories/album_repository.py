@@ -59,3 +59,11 @@ def list_albums_by_artist_name(name):
         list_albums_by_artist_id(results[0]['id'])
     else:
         print(f"!!!!!!!! Artist {name} not found !!!!!!!!")
+
+
+def edit_title(old_title, new_title):
+    sql = "UPDATE albums SET title = (%s) WHERE title = (%s) RETURNING * "
+    values = [new_title, old_title]
+    result = run_sql(sql, values)
+    if not result:
+        Print(f"!!!!!!!! Can't find title {old_title}") 

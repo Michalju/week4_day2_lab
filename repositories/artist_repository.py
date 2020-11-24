@@ -33,3 +33,10 @@ def select_all():
         artist = Artist(row['name'], row['id'] )
         artists.append(artist)
     return artists
+
+def edit_name(old_name, new_name):
+    sql = "UPDATE artists SET name = (%s) WHERE name = (%s) RETURNING * "
+    values = [new_name, old_name]
+    result = run_sql(sql, values)
+    if not result:
+        print(f"!!!!!!!! Can't find artist {old_name}") 
