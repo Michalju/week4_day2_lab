@@ -22,7 +22,7 @@ import repositories.album_repository as album_repository
 # album_repository.delete_all()
 # artist_repository.delete_all()
 
-#Task 4
+#Task 4 & 5
 artist_1 = Artist('AC/DC')
 artist_2 = Artist('Metallica')
 artist_repository.save(artist_1)
